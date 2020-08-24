@@ -2,6 +2,8 @@
 
 ngx-daily-gantt-chart is a very simple Angular gantt-chart component with a day-view.
 
+![ngx-daily-gantt-chart screenshot](images/ss.png)
+
 ## Features
 
 1. Dynamic workhours for each day.
