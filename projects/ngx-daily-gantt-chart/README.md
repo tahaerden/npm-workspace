@@ -2,7 +2,7 @@
 
 ngx-daily-gantt-chart is a very simple Angular gantt-chart component with a day-view.
 
-![ngx-daily-gantt-chart screenshot](images/ss.png)
+![ngx-daily-gantt-chart screenshot](https://github.com/tahaerden/npm-workspace/raw/master/projects/ngx-daily-gantt-chart/images/ss.png)
 
 ## Features
 
