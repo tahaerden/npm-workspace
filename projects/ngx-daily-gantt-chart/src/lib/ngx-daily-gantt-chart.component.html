@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="taskTableWrapper" #scrollOne>
+    <table class="taskTable">
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let task of tasks"
+          [ngClass]="{ parentTask: task.isParent, active: task.active }"
+          [hidden]="task.isHidden"
+          (click)="onTaskClick(task)"
+        >
+          <td>{{ task.label }}</td>
+          <td>{{ task.start }}</td>
+          <td>{{ task.end }}</td>
+          <td>{{ task.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="timelineWrapper"
+    (scroll)="scrollOne.scrollTop = scrollTwo.scrollTop"
+    #scrollTwo
+  >
+    <table class="timeline">
+      <thead>
+        <tr>
+          <th *ngFor="let item of [].constructor(workingHours); let i = index">
+            {{ this.dayStartHour + i }}:00
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks" [hidden]="task.isHidden">
+          <td
+            [ngStyle]="{
+              left: task.offset + 'px',
+              width: task.width + 'px'
+            }"
+          >
+            {{ task.label }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

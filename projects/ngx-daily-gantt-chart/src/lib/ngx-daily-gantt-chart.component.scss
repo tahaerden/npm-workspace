@@ -1,0 +1,128 @@
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.container {
+  height: 400px;
+  font-family: Calibri, sans-serif;
+  font-size: 12px;
+  border-radius: 7px;
+  margin: 40px;
+  padding: 20px;
+  background: #ff00cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #333399,
+    #ff00cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #333399,
+    #ff00cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+table {
+  td,
+  th {
+    line-height: 20px;
+  }
+  thead > tr > th {
+    text-align: center;
+  }
+}
+.taskTableWrapper {
+  height: 100%;
+  overflow: scroll hidden;
+  display: inline-block;
+  width: calc(30% - 2px);
+  border-right: 2px solid black;
+  background-color: #00000029;
+  color: white;
+  border-radius: 7px 0 0 7px;
+}
+.taskTable {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    background-color: #0000002e;
+  }
+  tr {
+    white-space: nowrap;
+    th,
+    td {
+      text-align: left;
+      border: 1px solid #ffffff12;
+      padding: 5px;
+      box-sizing: border-box;
+      height: 30px;
+    }
+  }
+}
+.timelineWrapper {
+  height: 100%;
+  overflow: scroll auto;
+  display: inline-block;
+  width: 70%;
+}
+.timeline {
+  border-collapse: collapse;
+  thead {
+    background-color: #0000002e;
+    color: white;
+  }
+  tr {
+    white-space: nowrap;
+    th {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 120px; // 1 minute is 2px
+      height: 31px;
+      text-align: left;
+      border: 1px solid #ffffff12;
+      padding: 5px;
+    }
+    td {
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 4px 0;
+      height: 22px;
+      text-align: center;
+      padding: 5px;
+      background-color: #ffffff52;
+      border-radius: 7px;
+      position: relative;
+      line-height: 13px;
+      color: white;
+    }
+  }
+}
+.parentTask {
+  cursor: pointer;
+  &.active {
+    > td:first-child::before {
+      content: '▼ ';
+    }
+  }
+  > td:first-child::before {
+    content: '▶ ';
+  }
+  + tr td:first-child {
+    padding-left: 25px !important;
+  }
+}

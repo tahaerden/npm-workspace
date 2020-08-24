@@ -1,0 +1,32 @@
+{
+  "name": "ngx-daily-gantt-chart",
+  "version": "1.2.1",
+  "author": {
+    "name": "Taha Erden",
+    "url": "http://tahaerden.com"
+  },
+  "description": "A very simple and easy to use Angular gantt-chart component with a day-view",
+  "keywords": [
+    "angular",
+    "component",
+    "ng",
+    "ngx",
+    "gantt",
+    "chart",
+    "gantt chart",
+    "daily",
+    "timeline",
+    "schedule",
+    "scheduler",
+    "planboard"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "date-fns": "^2.15.0"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}

@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-daily-gantt-chart": [
+        "dist/ngx-daily-gantt-chart/ngx-daily-gantt-chart",
+        "dist/ngx-daily-gantt-chart"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
