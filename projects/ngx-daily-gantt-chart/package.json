@@ -1,6 +1,6 @@
 {
   "name": "ngx-daily-gantt-chart",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Taha Erden",
     "url": "http://tahaerden.com"
@@ -20,6 +20,10 @@
     "scheduler",
     "planboard"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tahaerden/npm-workspace/tree/master/projects/ngx-daily-gantt-chart"
+  },
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^9.0.7",
