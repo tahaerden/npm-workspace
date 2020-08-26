@@ -8,12 +8,13 @@ ngx-daily-gantt-chart is a very simple Angular gantt-chart component with a day-
 
 1. Dynamic workhours for each day.
 2. Expandable child tasks.
-3. Modern design with gradient colors.
+3. Multiple color-coded task statuses per task.
+4. Modern design with gradient colors.
 
 ## TODO
 
-1. Add task statuses.
-2. Add tooltips to the bars and statuses on timeline.
+1. Add tooltips with additional info to the bars and statuses on timeline.
+2. Add more color themes.
 
 ## Installation
 
