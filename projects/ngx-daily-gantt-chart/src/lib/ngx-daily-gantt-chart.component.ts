@@ -30,6 +30,17 @@ export class NgxDailyGanttChartComponent implements OnInit {
     this.tasks.map((task) => {
       task.width = this.diffFromTime(task.end, task.start, 'minutes') * 2;
       task.offset = this.diffFromTime(task.start, this.dayStart, 'minutes') * 2;
+      if (task.statusList) {
+        task.statusList.map((status, index) => {
+          status.offset =
+            this.diffFromTime(status.start, this.dayStart, 'minutes') * 2;
+          if (task.statusList[index + 1] && task.statusList[index + 1].start) {
+            status.end = task.statusList[index + 1].start;
+            status.width =
+              this.diffFromTime(status.end, status.start, 'minutes') * 2;
+          }
+        });
+      }
     });
   }
   onTaskClick(clickedTask) {

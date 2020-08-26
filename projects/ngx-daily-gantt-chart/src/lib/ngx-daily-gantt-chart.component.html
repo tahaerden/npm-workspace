@@ -38,16 +38,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let task of tasks" [hidden]="task.isHidden">
-          <td
+        <div class="row" *ngFor="let task of tasks" [hidden]="task.isHidden">
+          <div
+            class="taskBar"
             [ngStyle]="{
               left: task.offset + 'px',
               width: task.width + 'px'
             }"
-          >
-            {{ task.label }}
-          </td>
-        </tr>
+          ></div>
+          <span
+            *ngFor="let status of task.statusList"
+            [ngStyle]="{
+              left: status.offset + 'px',
+              width: status.width + 'px',
+              'background-color': status.color
+            }"
+            class="statusBar"
+          ></span>
+        </div>
       </tbody>
     </table>
   </div>

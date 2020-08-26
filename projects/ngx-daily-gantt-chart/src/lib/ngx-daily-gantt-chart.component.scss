@@ -86,8 +86,10 @@ table {
     background-color: #0000002e;
     color: white;
   }
-  tr {
+  tr,
+  .row {
     white-space: nowrap;
+    position: relative;
     th {
       display: inline-block;
       box-sizing: border-box;
@@ -97,18 +99,33 @@ table {
       border: 1px solid #ffffff12;
       padding: 5px;
     }
-    td {
+    .taskBar {
       display: inline-block;
       box-sizing: border-box;
       margin: 4px 0;
       height: 22px;
       text-align: center;
       padding: 5px;
-      background-color: #ffffff52;
+      background-color: #ffffff8c;
       border-radius: 7px;
       position: relative;
       line-height: 13px;
       color: white;
+    }
+    .statusBar {
+      background-color: red;
+      position: absolute;
+      height: 16px;
+      width: 20px;
+      top: 3px;
+      box-sizing: border-box;
+      margin: 4px 0;
+    }
+    span:first-of-type {
+      border-radius: 7px 0 0 7px;
+    }
+    span:last-of-type {
+      border-radius: 0 7px 7px 0;
     }
   }
 }
