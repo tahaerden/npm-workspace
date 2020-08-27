@@ -144,3 +144,6 @@ table {
     padding-left: 25px !important;
   }
 }
+::ng-deep .gantt-tooltip {
+  white-space: pre-line;
+}

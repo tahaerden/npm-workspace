@@ -41,6 +41,8 @@
         <div class="row" *ngFor="let task of tasks" [hidden]="task.isHidden">
           <div
             class="taskBar"
+            matTooltip="{{ task.tooltip }}"
+            matTooltipClass="gantt-tooltip"
             [ngStyle]="{
               left: task.offset + 'px',
               width: task.width + 'px'
@@ -48,12 +50,14 @@
           ></div>
           <span
             *ngFor="let status of task.statusList"
+            class="statusBar"
             [ngStyle]="{
               left: status.offset + 'px',
               width: status.width + 'px',
               'background-color': status.color
             }"
-            class="statusBar"
+            matTooltip="{{ status.tooltip }}"
+            matTooltipClass="gantt-tooltip"
           ></span>
         </div>
       </tbody>
