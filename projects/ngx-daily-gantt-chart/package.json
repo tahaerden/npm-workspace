@@ -1,9 +1,12 @@
 {
   "name": "ngx-daily-gantt-chart",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "author": {
     "name": "Taha Erden",
     "url": "http://tahaerden.com"
+  },
+  "scripts": {
+    "watch": "ng build ngx-daily-gantt-chart --watch"
   },
   "description": "A very simple and easy to use Angular gantt-chart component with a day-view",
   "keywords": [
