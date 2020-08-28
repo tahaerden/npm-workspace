@@ -10,6 +10,7 @@ export class NgxDailyGanttChartComponent implements OnInit {
   @Input() dayStart: any;
   @Input() dayEnd: any;
   @Input() tasks: any;
+  @Input() theme: 'material' | 'gradient' | null = 'material';
   dayStartHour: number;
   today = new Date();
   selectedDate = this.today;

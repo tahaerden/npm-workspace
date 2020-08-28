@@ -1,3 +1,101 @@
+.theme-gradient {
+  table {
+    thead > tr > th {
+      text-align: center;
+    }
+  }
+  background: #ff00cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #333399,
+    #ff00cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #333399,
+    #ff00cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 7px;
+  .taskTableWrapper {
+    background-color: #00000029;
+    color: white;
+    border-radius: 7px 0 0 7px;
+  }
+  .taskTable {
+    thead {
+      background-color: #0000002e;
+    }
+    tr {
+      th,
+      td {
+        height: 30px;
+      }
+      td {
+        border: 1px solid #ffffff12;
+      }
+    }
+  }
+  .timelineWrapper {
+    thead {
+      background-color: #0000002e;
+      color: white;
+    }
+    tr,
+    .row {
+      th {
+        border: 1px solid #ffffff12;
+      }
+      .taskBar {
+        background-color: #ffffff8c;
+        color: white;
+      }
+    }
+  }
+  .statusBar {
+    background-color: #ee04c8;
+  }
+}
+.theme-material {
+  background: #ffffff;
+  thead {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .taskTableWrapper {
+    border-right: 1px solid #e0e0e0;
+  }
+  .taskTable {
+    table {
+      thead {
+        color: rgba(0, 0, 0, 0.54);
+        tr > th {
+          text-align: left;
+        }
+      }
+    }
+    td,
+    th {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      height: 31px;
+      font-weight: normal;
+    }
+  }
+  .timelineWrapper {
+    tr,
+    .row {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      th:not(:last-child) {
+        border-right: 1px solid #e0e0e0;
+      }
+      .taskBar {
+        background-color: #d8d8d8;
+      }
+    }
+  }
+  .statusBar {
+    background-color: #ee04c8;
+  }
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -22,28 +120,13 @@
   height: 400px;
   font-family: Calibri, sans-serif;
   font-size: 12px;
-  border-radius: 7px;
   margin: 40px;
   padding: 20px;
-  background: #ff00cc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #333399,
-    #ff00cc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #333399,
-    #ff00cc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 table {
   td,
   th {
     line-height: 20px;
-  }
-  thead > tr > th {
-    text-align: center;
   }
 }
 .taskTableWrapper {
@@ -51,23 +134,15 @@ table {
   overflow: scroll hidden;
   display: inline-block;
   width: calc(30% - 2px);
-  border-right: 2px solid black;
-  background-color: #00000029;
-  color: white;
-  border-radius: 7px 0 0 7px;
 }
 .taskTable {
   width: 100%;
   border-collapse: collapse;
-  thead {
-    background-color: #0000002e;
-  }
   tr {
     white-space: nowrap;
     th,
     td {
       text-align: left;
-      border: 1px solid #ffffff12;
       padding: 5px;
       box-sizing: border-box;
       height: 30px;
@@ -82,10 +157,6 @@ table {
 }
 .timeline {
   border-collapse: collapse;
-  thead {
-    background-color: #0000002e;
-    color: white;
-  }
   tr,
   .row {
     white-space: nowrap;
@@ -96,8 +167,6 @@ table {
       box-sizing: border-box;
       width: 120px; // 1 minute is 2px
       height: 31px;
-      text-align: left;
-      border: 1px solid #ffffff12;
       padding: 5px;
     }
     .taskBar {
@@ -107,14 +176,11 @@ table {
       height: 22px;
       text-align: center;
       padding: 5px;
-      background-color: #ffffff8c;
       border-radius: 7px;
       position: relative;
       line-height: 13px;
-      color: white;
     }
     .statusBar {
-      background-color: red;
       position: absolute;
       height: 16px;
       width: 20px;
