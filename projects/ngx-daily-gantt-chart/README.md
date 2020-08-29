@@ -29,8 +29,9 @@ Add the component in your HTML with the following inputs:
   [dayStart]="'09:00'"
   [dayEnd]="'15:30'"
   [tasks]="tasks"
-  [theme]="'gradient'" <!-- Optional. Values are 'gradient', 'material', null. Default is 'material'  -->
+  [theme]="'gradient'"
 ></gantt-chart>
+<!-- Theme is optional. Values are 'gradient', 'material', null. Default is 'material'  -->
 ```
 
 Your tasks array should look like the following:
