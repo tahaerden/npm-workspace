@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ngx-icon-calendar',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['ngx-icon-calendar.component.scss']
 })
 export class NgxIconCalendarComponent implements OnInit {
+  @Input() events: any;
+  @Input() prevButtonText = '';
+  @Input() nextButtonText = '';
   iconSortArray = [];
   eventDates = [];
-  events = {};
   cells = [];
   today = new Date();
   currentMonth = this.today.getMonth();
@@ -199,6 +201,5 @@ export class NgxIconCalendarComponent implements OnInit {
         }
       }
     }
-    console.log(this.cells);
   }
 }

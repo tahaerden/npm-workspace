@@ -2,6 +2,7 @@
   <mat-grid-tile>
     <button mat-button (click)="previous()">
       <i class="material-icons"> keyboard_arrow_left </i>
+      {{ prevButtonText }}
     </button>
   </mat-grid-tile>
   <mat-grid-tile>
@@ -12,6 +13,7 @@
   </mat-grid-tile>
   <mat-grid-tile>
     <button mat-button (click)="next()">
+      {{ nextButtonText }}
       <i class="material-icons"> keyboard_arrow_right </i>
     </button>
   </mat-grid-tile>
