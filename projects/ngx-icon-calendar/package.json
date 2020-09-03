@@ -1,0 +1,40 @@
+{
+  "name": "ngx-icon-calendar",
+  "version": "0.0.1",
+  "author": {
+    "name": "Taha Erden",
+    "url": "http://tahaerden.com"
+  },
+  "scripts": {
+    "watch": "ng build ngx-icon-calendar --watch",
+    "publishToNpm": "ng build --prod && cd.. && cd.. && cd dist && cd ngx-icon-calendar && npm pack && npm publish"
+  },
+  "description": "A modern and lightweight Angular calendar component with up to 4 icons per day in a month-view",
+  "keywords": [
+    "angular",
+    "component",
+    "ng",
+    "ngx",
+    "calendar",
+    "event",
+    "event calendar",
+    "icon",
+    "icon calendar",
+    "monthly"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tahaerden/npm-workspace/tree/master/projects/ngx-icon-calendar"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "@angular/cdk": "^9.1.1",
+    "@ngx-translate/core": "^13.0.0",
+    "@angular/material": "^9.1.1"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}

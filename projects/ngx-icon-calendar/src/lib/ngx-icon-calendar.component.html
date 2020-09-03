@@ -1,0 +1,69 @@
+<mat-grid-list cols="3" rowHeight="60px" class="primary-bg calendar-nav">
+  <mat-grid-tile>
+    <button mat-button (click)="previous()">
+      <i class="material-icons"> keyboard_arrow_left </i>
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <strong>
+      {{ 'MONTHS.' + visibleMonth | translate }}
+      {{ visibleYear }}
+    </strong>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-button (click)="next()">
+      <i class="material-icons"> keyboard_arrow_right </i>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="7" rowHeight="30px" class="accent-bg color-white">
+  <mat-grid-tile *ngFor="let day of daysShort">
+    {{ 'DAY_SHORT.' + day | translate | lowercase }}
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="7" class="calendar">
+  <mat-grid-tile
+    *ngFor="let cell of cells"
+    class="cell"
+    [ngClass]="cell.cellClass"
+  >
+    <span [ngClass]="cell.dayClass">{{ cell.dayNumber }}</span>
+    <mat-grid-list
+      cols="2"
+      class="innerCell"
+      *ngIf="cell.styles"
+      [ngStyle]="{
+        'background-image':
+          'url(assets/waste_icons/' + cell.styles.center + '.png)'
+      }"
+      [ngClass]="cell.date"
+      gutterSize="0"
+    >
+      <mat-grid-tile
+        [ngStyle]="{
+          'background-image':
+            'url(assets/waste_icons/' + cell.styles.topLeft + '.png)'
+        }"
+      >
+      </mat-grid-tile>
+      <mat-grid-tile
+        [ngStyle]="{
+          'background-image':
+            'url(assets/waste_icons/' + cell.styles.topRight + '.png)'
+        }"
+      ></mat-grid-tile>
+      <mat-grid-tile
+        [ngStyle]="{
+          'background-image':
+            'url(assets/waste_icons/' + cell.styles.bottomLeft + '.png)'
+        }"
+      ></mat-grid-tile>
+      <mat-grid-tile
+        [ngStyle]="{
+          'background-image':
+            'url(assets/waste_icons/' + cell.styles.bottomRight + '.png)'
+        }"
+      ></mat-grid-tile>
+    </mat-grid-list>
+  </mat-grid-tile>
+</mat-grid-list>

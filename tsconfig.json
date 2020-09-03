@@ -22,6 +22,10 @@
       "ngx-daily-gantt-chart": [
         "dist/ngx-daily-gantt-chart/ngx-daily-gantt-chart",
         "dist/ngx-daily-gantt-chart"
+      ],
+      "ngx-icon-calendar": [
+        "dist/ngx-icon-calendar/ngx-icon-calendar",
+        "dist/ngx-icon-calendar"
       ]
     }
   },
