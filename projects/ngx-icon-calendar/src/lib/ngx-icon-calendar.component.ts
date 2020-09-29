@@ -8,8 +8,8 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class NgxIconCalendarComponent implements OnInit {
   @Input() events: any;
-  @Input() prevButtonText = '';
-  @Input() nextButtonText = '';
+  @Input() prevButtonText = 'previous';
+  @Input() nextButtonText = 'next';
   @Input() daysShort = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
   @Input() iconPath: string;
   @Input() iconFormat = '.png';

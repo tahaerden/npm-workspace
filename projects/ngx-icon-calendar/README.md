@@ -1,24 +1,55 @@
 # NgxIconCalendar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+ngx-icon-calendar is a very simple Angular gantt-chart component with a day-view.
 
-## Code scaffolding
+![ngx-icon-calendar screenshot](https://github.com/tahaerden/npm-workspace/raw/master/projects/ngx-icon-calendar/images/ss.png)
 
-Run `ng generate component component-name --project ngx-icon-calendar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-icon-calendar`.
-> Note: Don't forget to add `--project ngx-icon-calendar` or else it will be added to the default project in your `angular.json` file. 
+## Features
 
-## Build
+1. Very light-weight monthly calendar, drawn with basic JS.
+2. Displays up to 4 icons at once. Displays a button to show a dialog for more than 4 icons.
+3. Responsive modern material design.
 
-Run `ng build ngx-icon-calendar` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Publishing
+Run `npm install ngx-icon-calendar --save` or download zip from github / clone repo.
 
-After building your library with `ng build ngx-icon-calendar`, go to the dist folder `cd dist/ngx-icon-calendar` and run `npm publish`.
+## Usage
 
-## Running unit tests
+Include the module in your component as:
 
-Run `ng test ngx-icon-calendar` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`import { NgxIconCalendarModule } from 'ngx-icon-calendar';`
 
-## Further help
+Add the component in your HTML with the following inputs:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```HTML
+<ngx-icon-calendar
+        [events]="events"
+        [iconPath]="'assets/my_icons/'"
+        [iconFormat]="'.png'"
+        [prevButtonText]="'previous'"
+        [nextButtonText]="'next'"
+        [daysShort]="['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']"
+      ></ngx-icon-calendar>
+<!--
+
+  iconPath (required): Relative path to your icons.
+  iconFormat (optional. Default: '.png'): Image format of your icons.
+  prevButtonText (optional. Default: 'previous'): Text for previous button.
+  nextButtonText (optional. Default: 'next'): Text for next button.
+  daysShort (optional. Default: 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'): Shortened day names.
+
+-->
+```
+
+Your events array should look like the following:
+
+```TS
+  events = {
+    '2020-09-15': { icon: 'food' },
+    '2020-09-16': { icon: 'food-gym' },
+    '2020-09-17': { icon: 'food-gym-book' },
+    '2020-09-18': { icon: 'food-gym-book-car' },
+    '2020-09-19': { icon: 'food-gym-book-car-fifthIcon' }
+  };
+```
