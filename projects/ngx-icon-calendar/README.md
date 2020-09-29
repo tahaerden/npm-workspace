@@ -30,8 +30,8 @@ Add the component in your HTML with the following inputs:
         [prevButtonText]="'previous'"
         [nextButtonText]="'next'"
         [daysShort]="['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']"
-      ></ngx-icon-calendar>
-<!--
+>
+</ngx-icon-calendar>
 
   iconPath (required): Relative path to your icons.
   iconFormat (optional. Default: '.png'): Image format of your icons.
@@ -39,7 +39,6 @@ Add the component in your HTML with the following inputs:
   nextButtonText (optional. Default: 'next'): Text for next button.
   daysShort (optional. Default: 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'): Shortened day names.
 
--->
 ```
 
 Your events array should look like the following:
@@ -57,10 +56,10 @@ Your events array should look like the following:
 Finally, for the styling you can use the following classes in your css:
 
 ```CSS
-.primary-color {
+.primary-bg {
   color: mat-color($your-primary-variable);
 }
-.accent-color {
+.accent-bg {
   color: mat-color($your-accent-variable);
 }
 ```
@@ -68,10 +67,10 @@ Finally, for the styling you can use the following classes in your css:
 Or simply:
 
 ```CSS
-.primary-color {
+.primary-bg {
   background-color: #ffffff;
 }
-.accent-color {
+.accent-bg {
   background-color: #000000;
 }
 ```
