@@ -9,6 +9,7 @@ export class NgxIconCalendarComponent implements OnInit {
   @Input() events: any;
   @Input() prevButtonText = '';
   @Input() nextButtonText = '';
+  @Input() daysShort = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
   iconSortArray = [];
   eventDates = [];
   cells = [];
@@ -21,7 +22,6 @@ export class NgxIconCalendarComponent implements OnInit {
   visibleYear: string;
   prevYear: number;
   nextYear: number;
-  daysShort = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
   months = [
     'JANUARY',
     'FEBRUARY',
