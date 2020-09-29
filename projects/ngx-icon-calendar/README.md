@@ -53,3 +53,25 @@ Your events array should look like the following:
     '2020-09-19': { icon: 'food-gym-book-car-fifthIcon' }
   };
 ```
+
+Finally, for the styling you can use the following classes in your css:
+
+```CSS
+.primary-color {
+  color: mat-color($your-primary-variable);
+}
+.accent-color {
+  color: mat-color($your-accent-variable);
+}
+```
+
+Or simply:
+
+```CSS
+.primary-color {
+  background-color: #ffffff;
+}
+.accent-color {
+  background-color: #000000;
+}
+```
