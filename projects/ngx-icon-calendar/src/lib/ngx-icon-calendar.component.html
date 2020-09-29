@@ -36,7 +36,7 @@
       *ngIf="cell.styles"
       [ngStyle]="{
         'background-image':
-          'url(assets/waste_icons/' + cell.styles.center + '.png)'
+          'url(' + iconPath + cell.styles.center + iconFormat + ')'
       }"
       [ngClass]="cell.date"
       gutterSize="0"
@@ -44,26 +44,26 @@
       <mat-grid-tile
         [ngStyle]="{
           'background-image':
-            'url(assets/waste_icons/' + cell.styles.topLeft + '.png)'
+            'url(' + iconPath + cell.styles.topLeft + iconFormat + ')'
         }"
       >
       </mat-grid-tile>
       <mat-grid-tile
         [ngStyle]="{
           'background-image':
-            'url(assets/waste_icons/' + cell.styles.topRight + '.png)'
+            'url(' + iconPath + cell.styles.topRight + iconFormat + ')'
         }"
       ></mat-grid-tile>
       <mat-grid-tile
         [ngStyle]="{
           'background-image':
-            'url(assets/waste_icons/' + cell.styles.bottomLeft + '.png)'
+            'url(' + iconPath + cell.styles.bottomLeft + iconFormat + ')'
         }"
       ></mat-grid-tile>
       <mat-grid-tile
         [ngStyle]="{
           'background-image':
-            'url(assets/waste_icons/' + cell.styles.bottomRight + '.png)'
+            'url(' + iconPath + cell.styles.bottomRight + iconFormat + ')'
         }"
       ></mat-grid-tile>
     </mat-grid-list>

@@ -10,6 +10,8 @@ export class NgxIconCalendarComponent implements OnInit {
   @Input() prevButtonText = '';
   @Input() nextButtonText = '';
   @Input() daysShort = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+  @Input() iconPath: string;
+  @Input() iconFormat = '.png';
   iconSortArray = [];
   eventDates = [];
   cells = [];
@@ -105,19 +107,16 @@ export class NgxIconCalendarComponent implements OnInit {
         } else if (date > this.daysInMonth(month, year)) {
           break;
         } else {
-          const momentYear = year;
-          let momentMonth = (month + 1).toString();
-          if (momentMonth.length === 1) {
-            momentMonth = '0' + momentMonth;
+          const cellYear = year;
+          let cellMonth = (month + 1).toString();
+          if (cellMonth.length === 1) {
+            cellMonth = '0' + cellMonth;
           }
-          let momentDay = date.toString();
-          if (momentDay.length === 1) {
-            momentDay = '0' + momentDay;
+          let cellDay = date.toString();
+          if (cellDay.length === 1) {
+            cellDay = '0' + cellDay;
           }
-          // const cellDate = moment(
-          //   momentYear + '-' + momentMonth + '-' + momentDay
-          // ).format('YYYY-MM-DD');
-          const cellDate = momentYear + '-' + momentMonth + '-' + momentDay;
+          const cellDate = cellYear + '-' + cellMonth + '-' + cellDay;
 
           let styleList = {};
           let cellClass = '';
