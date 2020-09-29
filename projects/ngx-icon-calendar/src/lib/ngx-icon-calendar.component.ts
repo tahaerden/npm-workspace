@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'ngx-icon-calendar',
@@ -38,10 +39,20 @@ export class NgxIconCalendarComponent implements OnInit {
     'NOVEMBER',
     'DECEMBER'
   ];
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.drawCalendar(this.currentMonth, this.currentYear);
+  }
+
+  openDialog(cell) {
+    this.dialog.open(MultipleIconsDialogComponent, {
+      data: {
+        iconList: this.events[cell.date].icon.split('-'),
+        iconPath: this.iconPath,
+        iconFormat: this.iconFormat
+      }
+    });
   }
 
   isObjEmpty(obj) {
@@ -126,49 +137,58 @@ export class NgxIconCalendarComponent implements OnInit {
           }
           if (this.events[cellDate] && this.events[cellDate].icon) {
             const iconNames = this.events[cellDate].icon.split('-');
-            for (const item of iconNames) {
-              // dayClass = 'text-white';
-              switch (iconNames.length) {
-                case 1:
-                  styleList = {
-                    center: iconNames[0],
-                    topLeft: 'blank',
-                    topRight: 'blank',
-                    bottomLeft: 'blank',
-                    bottomRight: 'blank'
-                  };
-                  break;
-                case 2:
-                  styleList = {
-                    center: 'blank',
-                    topLeft: iconNames[0],
-                    topRight: 'blank',
-                    bottomLeft: 'blank',
-                    bottomRight: iconNames[1]
-                  };
-                  break;
-                case 3:
-                  styleList = {
-                    center: 'blank',
-                    topLeft: iconNames[0],
-                    topRight: iconNames[1],
-                    bottomLeft: 'blank',
-                    bottomRight: iconNames[2]
-                  };
-                  break;
-                case 4:
-                  styleList = {
-                    center: 'blank',
-                    topLeft: iconNames[0],
-                    topRight: iconNames[1],
-                    bottomLeft: iconNames[2],
-                    bottomRight: iconNames[3]
-                  };
-                  break;
-                default:
-                  break;
-              }
+            // for (const item of iconNames) {
+            switch (iconNames.length) {
+              case 1:
+                styleList = {
+                  center: iconNames[0],
+                  topLeft: 'blank',
+                  topRight: 'blank',
+                  bottomLeft: 'blank',
+                  bottomRight: 'blank'
+                };
+                break;
+              case 2:
+                styleList = {
+                  center: 'blank',
+                  topLeft: iconNames[0],
+                  topRight: 'blank',
+                  bottomLeft: 'blank',
+                  bottomRight: iconNames[1]
+                };
+                break;
+              case 3:
+                styleList = {
+                  center: 'blank',
+                  topLeft: iconNames[0],
+                  topRight: iconNames[1],
+                  bottomLeft: 'blank',
+                  bottomRight: iconNames[2]
+                };
+                break;
+              case 4:
+                styleList = {
+                  center: 'blank',
+                  topLeft: iconNames[0],
+                  topRight: iconNames[1],
+                  bottomLeft: iconNames[2],
+                  bottomRight: iconNames[3]
+                };
+                break;
+              default:
+                break;
             }
+            if (iconNames.length > 4) {
+              styleList = {
+                showDialogButton: true,
+                center: 'blank',
+                topLeft: 'blank',
+                topRight: 'blank',
+                bottomLeft: 'blank',
+                bottomRight: 'blank'
+              };
+            }
+            // }
           }
 
           if (this.isObjEmpty(styleList)) {
@@ -200,5 +220,21 @@ export class NgxIconCalendarComponent implements OnInit {
         }
       }
     }
+  }
+}
+
+@Component({
+  selector: 'multiple-icons-dialog',
+  templateUrl: 'multiple-icons-dialog.html',
+  styleUrls: ['ngx-icon-calendar.component.scss']
+})
+export class MultipleIconsDialogComponent {
+  iconList: any;
+  iconPath: string;
+  iconFormat: string;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.iconList = data.iconList;
+    this.iconPath = data.iconPath;
+    this.iconFormat = data.iconFormat;
   }
 }

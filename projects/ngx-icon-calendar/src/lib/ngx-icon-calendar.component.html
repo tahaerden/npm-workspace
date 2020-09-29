@@ -41,6 +41,15 @@
       [ngClass]="cell.date"
       gutterSize="0"
     >
+      <button
+        class="dialogButton"
+        mat-raised-button
+        color="accent"
+        (click)="openDialog(cell)"
+        *ngIf="cell.styles.showDialogButton"
+      >
+        <mat-icon>list</mat-icon>
+      </button>
       <mat-grid-tile
         [ngStyle]="{
           'background-image':
