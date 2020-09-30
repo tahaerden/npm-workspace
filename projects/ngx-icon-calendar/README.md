@@ -1,6 +1,6 @@
 # NgxIconCalendar
 
-ngx-icon-calendar is a very simple Angular gantt-chart component with a day-view.
+ngx-icon-calendar is a very simple Angular calendar component with a month-view. It allows you to display up to 4 icons at once or show a dialog for more than that.
 
 ![ngx-icon-calendar screenshot](https://github.com/tahaerden/npm-workspace/raw/master/projects/ngx-icon-calendar/images/ss.png)
 
